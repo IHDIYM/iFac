@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Twin Factory System - Presentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --primary: #16a34a;
+      --secondary: #232323;
+      --accent: #fbbf24;
+      --bg: #f3f3f3;
+      --slide-bg: #fff;
+      --text: #232323;
+      --muted: #b0b0b0;
+      --header: #16a34a;
+      --bar: #16a34a;
+    }
+    body {
+      background: var(--bg);
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    .slide {
+      width: 900px;
+      max-width: 98vw;
+      min-height: 540px;
+      margin: 32px auto;
+      background: var(--slide-bg);
+      border-radius: 18px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      padding: 0;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+    .slide-content {
+      padding: 36px 48px 36px 48px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide-bar {
+      width: 100%;
+      height: 36px;
+      background: var(--bar);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      padding: 0 32px;
+    }
+    .slide-bar.left {
+      justify-content: flex-start;
+    }
+    h1, h2 {
+      color: var(--header);
+      margin-top: 0;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 0.5em;
+    }
+    h1 {
+      font-size: 2.5em;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.2em;
+    }
+    h2 {
+      font-size: 1.5em;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.15em;
+    }
+    ul {
+      font-size: 1.15em;
+      margin-top: 1.2em;
+      margin-bottom: 1.2em;
+      padding-left: 1.5em;
+      color: var(--text);
+    }
+    li {
+      margin-bottom: 0.8em;
+      line-height: 1.7;
+    }
+    .subtitle, .meta {
+      color: var(--muted);
+      font-size: 1.1em;
+      margin-bottom: 1.2em;
+      text-align: left;
+    }
+    .diagram {
+      background: #f6fef7;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 32px 0;
+      font-family: 'Consolas', monospace;
+      color: var(--primary);
+      font-size: 1.1em;
+      text-align: center;
+      border: 2.5px solid var(--primary);
+      word-break: break-word;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+    .thankyou {
+      font-size: 2.2em;
+      color: var(--primary);
+      text-align: center;
+      margin-top: 80px;
+      font-weight: 800;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+    @media (max-width: 1200px), print {
+      .slide {
+        width: 100vw;
+        min-height: 100vh;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .slide-content {
+        padding: 16px 4vw 16px 4vw;
+      }
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.3em; }
+      ul { font-size: 1em; }
+    }
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .slide {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 297mm !important;
+        min-height: 210mm !important;
+        padding: 0 !important;
+      }
+      .slide-content {
+        padding: 18mm 32mm 18mm 32mm !important;
+      }
+      h1, h2, .diagram, .thankyou {
+        color: #16a34a !important;
+        text-shadow: none !important;
+      }
+      .diagram {
+        border-color: #16a34a !important;
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .subtitle, .meta, ul, li {
+        color: #000 !important;
+      }
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1: Title -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h1>Digital Twin Factory System</h1>
+      <div class="subtitle">
+        Prepared By: Ritik Verma<br>
+        Date: 2024-06-09
+      </div>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 2: Introduction & Motivation -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>Introduction & Motivation</h2>
+      <ul>
+        <li>Modern factories require real-time visibility and control for efficiency and quality.</li>
+        <li>Traditional monitoring is fragmented and lacks a unified, interactive view.</li>
+        <li><b>Digital Twin:</b> A virtual replica of the factory, synchronized with live data, enabling monitoring, simulation, and optimization.</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 3: Project Objective -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>Project Objective</h2>
+      <ul>
+        <li>Develop a Digital Twin for a factory using a web-based 3D environment.</li>
+        <li>Integrate real-time PLC and order data to drive the virtual scene and dashboards.</li>
+        <li>Enable users to monitor, interact with, and analyze factory operations virtually.</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 4: System Overview -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>System Overview</h2>
+      <ul>
+        <li><b>Frontend:</b> React + @react-three/fiber for 3D visualization and dashboards.</li>
+        <li><b>Backend:</b> FastAPI server with MongoDB, providing real-time data via WebSocket.</li>
+        <li><b>Data Sources:</b> PLCs, production orders, inventory, and process steps.</li>
+        <li><b>Synchronization:</b> Every real-world event is mirrored in the digital twin UI.</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 5: Key Features -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Immersive 3D digital twin of the factory floor</li>
+        <li>Real-time data integration from PLCs and production systems</li>
+        <li>Interactive dashboards and live process visualization</li>
+        <li>Configurable process steps and color-coded inventory</li>
+        <li>Instant alerts for low inventory and process events</li>
+        <li>Modern, responsive UI for desktop and print</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 6: Architecture Diagram -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>Architecture Diagram</h2>
+      <div class="diagram">
+        <pre style="white-space: pre-line; word-break: break-all; font-size: 1.1em;">
++----------------+    +-----------+    +-------------------+    +-------------------+
+|  PLC Devices   |--->| MongoDB   |--->| FastAPI WebSocket |--->| Digital Twin UI   |
++----------------+    +-----------+    +-------------------+    +-------------------+
+        </pre>
+      </div>
+      <ul>
+        <li><b>Data Source:</b> PLCs, production orders, inventory, process steps</li>
+        <li><b>Backend:</b> FastAPI (Python), MongoDB</li>
+        <li><b>Frontend:</b> React (JavaScript/JSX, @react-three/fiber)</li>
+        <li><b>Real-time:</b> WebSockets</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 6b: System Architecture (Detailed) -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>System Architecture (Detailed)</h2>
+      <div class="diagram" style="text-align:center;">
+        <img src="Sys_Arch.png" alt="System Architecture Diagram" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); background: #fff;" />
+      </div>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 7: Digital Twin Factory Scene: 3D Setup -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>3D Digital Twin Setup</h2>
+      <ul>
+        <li>Full factory floor with lighting, camera controls, and physics for realism.</li>
+        <li>Cobot and AGV models with live, data-driven animations.</li>
+        <li>Color-coded racks and stations update with process steps and inventory.</li>
+        <li>Conveyor and other assets animate based on PLC signals.</li>
+        <li>Human avatars and WiFi animation add context and realism.</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 8: Real-Time Data Flow & Synchronization -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>Real-Time Data Flow & Synchronization</h2>
+      <ul>
+        <li>WebSocket streams real-time PLC and order data to the digital twin</li>
+        <li>Every process event triggers instant 3D animation and dashboard updates</li>
+        <li>Configurator panel steps update the scene and inventory live</li>
+        <li>Low inventory and process alerts appear immediately</li>
+        <li>All models and dashboards stay in sync with factory data</li>
+      </ul>
+      <div class="diagram">
+        <pre>
++-------------------+      +-------------------+      +-------------------+
+|  Real Factory     | ---> |  FastAPI Backend  | ---> |  Digital Twin UI  |
+|  (PLCs, Sensors)  |      |  (WebSocket API)  |      |  (3D + Dashboards)|
++-------------------+      +-------------------+      +-------------------+
+        </pre>
+      </div>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 9: User Interaction & Visualization -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>User Interaction & Visualization</h2>
+      <ul>
+        <li>Explore the 3D scene: zoom, pan, and select elements</li>
+        <li>Step-by-step process navigation and inventory management</li>
+        <li>Live dashboards visualize key metrics and process status</li>
+        <li>Clickable elements open external dashboards for details</li>
+        <li>Responsive UI adapts to all screens and print</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 10: Extensibility & Future Scope -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>Extensibility & Future Scope</h2>
+      <ul>
+        <li>Modular design for easy addition of new assets and logic</li>
+        <li>Integrate with IoT, ERP, and MES for a smarter factory</li>
+        <li>Enable AI/ML for predictive maintenance and optimization</li>
+        <li>Support simulation and what-if analysis</li>
+        <li>Scalable for cloud or on-premises deployment</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 11: Results & Impact -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <h2>Results & Impact</h2>
+      <ul>
+        <li>Unified, interactive view of the factory floor and operations.</li>
+        <li>Instant visibility into process status, inventory, and orders.</li>
+        <li>Reduced manual monitoring and improved responsiveness.</li>
+        <li>Foundation for advanced analytics and smart factory initiatives.</li>
+      </ul>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+  <!-- Slide 12: Thank You -->
+  <section class="slide">
+    <div class="slide-bar left">2 | 7/22/2025 | C4i4</div>
+    <div class="slide-content">
+      <div class="thankyou">
+        Thank You!<br>
+        <span style="font-size:0.7em;">Questions?</span>
+      </div>
+    </div>
+    <div class="slide-bar">C4i4</div>
+  </section>
+
+</body>
+</html>
